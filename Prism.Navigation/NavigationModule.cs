@@ -1,7 +1,6 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Navigation.Views;
-using Prism.Regions;
 
 namespace Prism.Navigation
 {
@@ -13,6 +12,11 @@ namespace Prism.Navigation
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            //Register Test Views
+            containerRegistry.RegisterForNavigation<OneView>();
+            containerRegistry.RegisterForNavigation<TwoView>();
+            containerRegistry.RegisterForNavigation<ThreeView>();
+
             containerRegistry.RegisterForNavigation<NavigationView>();
         }
     }

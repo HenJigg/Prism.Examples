@@ -1,12 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Region.Views;
 using Prism.Regions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Prism.Region.ViewModels
 {
@@ -34,6 +28,7 @@ namespace Prism.Region.ViewModels
 
             RemoveCommand = new DelegateCommand<object>(arg =>
               {
+                  if (arg == null) return;
                   //Remove view from Region
                   regionManager.Regions["RegionContent"].Remove(arg);
               });
