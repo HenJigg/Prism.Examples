@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Prism.Navigation.Views.NavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Prism.Navigation.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Margin="5"
+            TextWrapping="Wrap"
+            Text="How to use navigation to present views, pass parameters, and navigate records" 
+            FontSize="20" Grid.ColumnSpan="2"/>
+
+        <StackPanel Margin="5" Grid.Row="1">
+
+            <TextBlock Text="Navigation" Margin="0,15"/>
+            <Button Content="Click Me!" Command="{Binding NavgateCommand}"/>
+
+            <TextBlock Text="Navigation Parameter" Margin="0,15"/>
+            <Button Content="Click Me!" Command="{Binding NavgateCommand}"
+                    CommandParameter="Test" />
+
+            <TextBlock Text="ConfirmCancelNavigation" Margin="0,15"/>
+            <Button Content="Click One" Command="{Binding NavgateCommand}"
+                    CommandParameter="Test" />
+
+            <Button Content="Click Two" Margin="0,3" Command="{Binding NavgateCommand}"
+                    CommandParameter="Test" />
+
+            <TextBlock Text="NavigationJournal" Margin="0,15"/>
+
+            <UniformGrid Columns="2">
+                <Button Content="Previous page" Margin="2" Command="{Binding NavgateCommand}"
+                    CommandParameter="Test" />
+                <Button Content="Next page" Margin="2" Command="{Binding NavgateCommand}"
+                    CommandParameter="Test" />
+            </UniformGrid>
+        </StackPanel>
+
+        <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="NavigationContent"/>
+    </Grid>
+</UserControl>

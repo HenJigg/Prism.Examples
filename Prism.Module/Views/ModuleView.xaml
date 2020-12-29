@@ -10,7 +10,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True" >
     <Grid>
         <StackPanel >
-            <TextBlock Text="关于模块的介绍:" FontSize="22"/>
+            <TextBlock Text="How to load application modules" FontSize="20"/>
             <TextBlock Text="" FontSize="26" Margin="5"> 
                 <Hyperlink NavigateUri="https://www.cnblogs.com/zh7791/p/14107961.html" 
                            Click="Hyperlink_Click">Click Me!</Hyperlink>
