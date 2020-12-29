@@ -2,6 +2,7 @@
 using Prism.Examples.Views;
 using Prism.Ioc;
 using Prism.Modularity;
+using Prism.Module;
 using Prism.Region;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace Prism.Examples
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
+            moduleCatalog.AddModule<ModuleModule>();
             moduleCatalog.AddModule<RegionModule>();
             base.ConfigureModuleCatalog(moduleCatalog);
         }

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Prism.Module.Views.ModuleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Prism.Module.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <Grid>
+        <StackPanel >
+            <TextBlock Text="关于模块的介绍:" FontSize="22"/>
+            <TextBlock Text="" FontSize="26" Margin="5"> 
+                <Hyperlink NavigateUri="https://www.cnblogs.com/zh7791/p/14107961.html" 
+                           Click="Hyperlink_Click">Click Me!</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>
