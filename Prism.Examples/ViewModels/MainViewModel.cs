@@ -15,7 +15,6 @@ namespace Prism.Examples.ViewModels
             NavigationModelList = new ObservableCollection<string>();
             NavigationModelList.Add("Region");
             NavigationModelList.Add("Module");
-            NavigationModelList.Add("View");
             NavigationModelList.Add("Mvvm");
             NavigationModelList.Add("Navigation");
             NavigationModelList.Add("Dialog");
