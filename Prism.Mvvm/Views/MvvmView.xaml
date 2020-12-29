@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Prism.Mvvm.Views.MvvmView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Prism.Mvvm.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.ColumnSpan="2" Margin="5" Text="How to use bindings, commands, event aggregators" FontSize="20"/>
+
+        <StackPanel Margin="5" Grid.Row="1">
+
+            <TextBlock Text="DelegateCommand" Margin="0,15"/>
+            <Button Content="Click Me!" Command="{Binding ClickCommand}" />
+
+            <TextBlock Text="DelegateCommand.T" Margin="0,15"/>
+            <DockPanel>
+                <Button  
+                    Command="{Binding ClickTCommand}"
+                    CommandParameter="{Binding ElementName=txtInput,Path=Text}"
+                    Margin="5,0" Content="Click Me!" DockPanel.Dock="Right"/>
+                <TextBox x:Name="txtInput" Text="Hello!" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            </DockPanel>
+
+            <TextBlock Text="CompositeCommand" Margin="0,15"/>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox Content="Cmd1" IsChecked="{Binding Cmd1CanUpdate}"/>
+                <CheckBox Content="Cmd2" IsChecked="{Binding Cmd2CanUpdate}"/>
+            </StackPanel>
+            <Button Content="Click Cmd1 and Cmd2!" Margin="0,5" Command="{Binding CommandAll}" />
+
+            <TextBlock Text="IEventAggregator" Margin="0,15"/>
+
+            <Button Content="Subscribe"  Command="{Binding SubscribeCommand}" />
+            <Button Content="Unsubscribe" Margin="0,5" Command="{Binding UnsubscribeCommand}" />
+            <DockPanel>
+                <Button  
+                    Command="{Binding PublishCommand}"
+                    CommandParameter="{Binding ElementName=txtPubMessage,Path=Text}"
+                    Margin="5,0" Content="Publish" DockPanel.Dock="Right"/>
+                <TextBox x:Name="txtPubMessage" Text="Hello" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            </DockPanel>
+
+            <TextBlock Text="Filtering Events" Margin="0,15"/>
+            <Button Content="Filtering"  Command="{Binding FilterCommand}" />
+        </StackPanel>
+
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Content}" FontSize="18"/>
+    </Grid>
+</UserControl>

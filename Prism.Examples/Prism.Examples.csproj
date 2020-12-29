@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Prism.Module\Prism.Module.csproj" />
+    <ProjectReference Include="..\Prism.Mvvm\Prism.Mvvm.csproj" />
     <ProjectReference Include="..\Prism.Region\Prism.Region.csproj" />
   </ItemGroup>
 
